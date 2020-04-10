@@ -2,6 +2,9 @@ syntax = "proto2";
 
 option java_outer_classname = "MessageProtos";
 message Message {
-  required int32 requestId = 1;   
-  required string message = 2;  
+  optional int32 requestId = 1;
+  required string message = 2;
+  optional int32 type = 3;
+  optional string fromUserId = 4;
+  optional string toUserId = 5;
 }

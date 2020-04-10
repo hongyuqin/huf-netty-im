@@ -1,6 +1,7 @@
 package com.huf.netty.server.initializer;
 
 import com.huf.netty.common.proto.MessageProtos;
+import com.huf.netty.server.handler.ProtoServerHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -24,6 +25,6 @@ public class ProtoServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
         pipeline.addLast(new ProtobufEncoder());
 
-        //pipeline.addLast(new ProtoServerHandler());
+        pipeline.addLast(new ProtoServerHandler());
     }
 }

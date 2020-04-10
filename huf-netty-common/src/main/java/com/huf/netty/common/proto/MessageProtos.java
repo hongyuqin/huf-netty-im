@@ -17,12 +17,12 @@ public final class MessageProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 requestId = 1;</code>
+     * <code>optional int32 requestId = 1;</code>
      * @return Whether the requestId field is set.
      */
     boolean hasRequestId();
     /**
-     * <code>required int32 requestId = 1;</code>
+     * <code>optional int32 requestId = 1;</code>
      * @return The requestId.
      */
     int getRequestId();
@@ -43,6 +43,51 @@ public final class MessageProtos {
      */
     com.google.protobuf.ByteString
         getMessageBytes();
+
+    /**
+     * <code>optional int32 type = 3;</code>
+     * @return Whether the type field is set.
+     */
+    boolean hasType();
+    /**
+     * <code>optional int32 type = 3;</code>
+     * @return The type.
+     */
+    int getType();
+
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     * @return Whether the fromUserId field is set.
+     */
+    boolean hasFromUserId();
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     * @return The fromUserId.
+     */
+    java.lang.String getFromUserId();
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     * @return The bytes for fromUserId.
+     */
+    com.google.protobuf.ByteString
+        getFromUserIdBytes();
+
+    /**
+     * <code>optional string toUserId = 5;</code>
+     * @return Whether the toUserId field is set.
+     */
+    boolean hasToUserId();
+    /**
+     * <code>optional string toUserId = 5;</code>
+     * @return The toUserId.
+     */
+    java.lang.String getToUserId();
+    /**
+     * <code>optional string toUserId = 5;</code>
+     * @return The bytes for toUserId.
+     */
+    com.google.protobuf.ByteString
+        getToUserIdBytes();
   }
   /**
    * Protobuf type {@code Message}
@@ -58,6 +103,8 @@ public final class MessageProtos {
     }
     private Message() {
       message_ = "";
+      fromUserId_ = "";
+      toUserId_ = "";
     }
 
     @java.lang.Override
@@ -102,6 +149,23 @@ public final class MessageProtos {
               message_ = bs;
               break;
             }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              type_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              fromUserId_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              toUserId_ = bs;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -138,14 +202,14 @@ public final class MessageProtos {
     public static final int REQUESTID_FIELD_NUMBER = 1;
     private int requestId_;
     /**
-     * <code>required int32 requestId = 1;</code>
+     * <code>optional int32 requestId = 1;</code>
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required int32 requestId = 1;</code>
+     * <code>optional int32 requestId = 1;</code>
      * @return The requestId.
      */
     public int getRequestId() {
@@ -197,6 +261,113 @@ public final class MessageProtos {
       }
     }
 
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private int type_;
+    /**
+     * <code>optional int32 type = 3;</code>
+     * @return Whether the type field is set.
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional int32 type = 3;</code>
+     * @return The type.
+     */
+    public int getType() {
+      return type_;
+    }
+
+    public static final int FROMUSERID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object fromUserId_;
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     * @return Whether the fromUserId field is set.
+     */
+    public boolean hasFromUserId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     * @return The fromUserId.
+     */
+    public java.lang.String getFromUserId() {
+      java.lang.Object ref = fromUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fromUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     * @return The bytes for fromUserId.
+     */
+    public com.google.protobuf.ByteString
+        getFromUserIdBytes() {
+      java.lang.Object ref = fromUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fromUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOUSERID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object toUserId_;
+    /**
+     * <code>optional string toUserId = 5;</code>
+     * @return Whether the toUserId field is set.
+     */
+    public boolean hasToUserId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string toUserId = 5;</code>
+     * @return The toUserId.
+     */
+    public java.lang.String getToUserId() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          toUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string toUserId = 5;</code>
+     * @return The bytes for toUserId.
+     */
+    public com.google.protobuf.ByteString
+        getToUserIdBytes() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -204,10 +375,6 @@ public final class MessageProtos {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasRequestId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasMessage()) {
         memoizedIsInitialized = 0;
         return false;
@@ -225,6 +392,15 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt32(3, type_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fromUserId_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, toUserId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -240,6 +416,16 @@ public final class MessageProtos {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, type_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fromUserId_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, toUserId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -266,6 +452,21 @@ public final class MessageProtos {
         if (!getMessage()
             .equals(other.getMessage())) return false;
       }
+      if (hasType() != other.hasType()) return false;
+      if (hasType()) {
+        if (getType()
+            != other.getType()) return false;
+      }
+      if (hasFromUserId() != other.hasFromUserId()) return false;
+      if (hasFromUserId()) {
+        if (!getFromUserId()
+            .equals(other.getFromUserId())) return false;
+      }
+      if (hasToUserId() != other.hasToUserId()) return false;
+      if (hasToUserId()) {
+        if (!getToUserId()
+            .equals(other.getToUserId())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -284,6 +485,18 @@ public final class MessageProtos {
       if (hasMessage()) {
         hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
         hash = (53 * hash) + getMessage().hashCode();
+      }
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType();
+      }
+      if (hasFromUserId()) {
+        hash = (37 * hash) + FROMUSERID_FIELD_NUMBER;
+        hash = (53 * hash) + getFromUserId().hashCode();
+      }
+      if (hasToUserId()) {
+        hash = (37 * hash) + TOUSERID_FIELD_NUMBER;
+        hash = (53 * hash) + getToUserId().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -420,6 +633,12 @@ public final class MessageProtos {
         bitField0_ = (bitField0_ & ~0x00000001);
         message_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fromUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        toUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -453,6 +672,18 @@ public final class MessageProtos {
           to_bitField0_ |= 0x00000002;
         }
         result.message_ = message_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.fromUserId_ = fromUserId_;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.toUserId_ = toUserId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -510,6 +741,19 @@ public final class MessageProtos {
           message_ = other.message_;
           onChanged();
         }
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasFromUserId()) {
+          bitField0_ |= 0x00000008;
+          fromUserId_ = other.fromUserId_;
+          onChanged();
+        }
+        if (other.hasToUserId()) {
+          bitField0_ |= 0x00000010;
+          toUserId_ = other.toUserId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -517,9 +761,6 @@ public final class MessageProtos {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasRequestId()) {
-          return false;
-        }
         if (!hasMessage()) {
           return false;
         }
@@ -548,21 +789,21 @@ public final class MessageProtos {
 
       private int requestId_ ;
       /**
-       * <code>required int32 requestId = 1;</code>
+       * <code>optional int32 requestId = 1;</code>
        * @return Whether the requestId field is set.
        */
       public boolean hasRequestId() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required int32 requestId = 1;</code>
+       * <code>optional int32 requestId = 1;</code>
        * @return The requestId.
        */
       public int getRequestId() {
         return requestId_;
       }
       /**
-       * <code>required int32 requestId = 1;</code>
+       * <code>optional int32 requestId = 1;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -573,7 +814,7 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>required int32 requestId = 1;</code>
+       * <code>optional int32 requestId = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -666,6 +907,211 @@ public final class MessageProtos {
         onChanged();
         return this;
       }
+
+      private int type_ ;
+      /**
+       * <code>optional int32 type = 3;</code>
+       * @return Whether the type field is set.
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional int32 type = 3;</code>
+       * @return The type.
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>optional int32 type = 3;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(int value) {
+        bitField0_ |= 0x00000004;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fromUserId_ = "";
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       * @return Whether the fromUserId field is set.
+       */
+      public boolean hasFromUserId() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       * @return The fromUserId.
+       */
+      public java.lang.String getFromUserId() {
+        java.lang.Object ref = fromUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fromUserId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       * @return The bytes for fromUserId.
+       */
+      public com.google.protobuf.ByteString
+          getFromUserIdBytes() {
+        java.lang.Object ref = fromUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fromUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       * @param value The fromUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fromUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFromUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fromUserId_ = getDefaultInstance().getFromUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       * @param value The bytes for fromUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fromUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object toUserId_ = "";
+      /**
+       * <code>optional string toUserId = 5;</code>
+       * @return Whether the toUserId field is set.
+       */
+      public boolean hasToUserId() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>optional string toUserId = 5;</code>
+       * @return The toUserId.
+       */
+      public java.lang.String getToUserId() {
+        java.lang.Object ref = toUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            toUserId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string toUserId = 5;</code>
+       * @return The bytes for toUserId.
+       */
+      public com.google.protobuf.ByteString
+          getToUserIdBytes() {
+        java.lang.Object ref = toUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          toUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string toUserId = 5;</code>
+       * @param value The toUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string toUserId = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToUserId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        toUserId_ = getDefaultInstance().getToUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string toUserId = 5;</code>
+       * @param value The bytes for toUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -731,8 +1177,10 @@ public final class MessageProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rmessage.proto\"-\n\007Message\022\021\n\trequestId\030" +
-      "\001 \002(\005\022\017\n\007message\030\002 \002(\tB\017B\rMessageProtos"
+      "\n\rmessage.proto\"a\n\007Message\022\021\n\trequestId\030" +
+      "\001 \001(\005\022\017\n\007message\030\002 \002(\t\022\014\n\004type\030\003 \001(\005\022\022\n\n" +
+      "fromUserId\030\004 \001(\t\022\020\n\010toUserId\030\005 \001(\tB\017B\rMe" +
+      "ssageProtos"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +1191,7 @@ public final class MessageProtos {
     internal_static_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Message_descriptor,
-        new java.lang.String[] { "RequestId", "Message", });
+        new java.lang.String[] { "RequestId", "Message", "Type", "FromUserId", "ToUserId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

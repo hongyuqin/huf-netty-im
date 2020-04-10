@@ -1,5 +1,6 @@
 package com.huf.netty.client.initializer;
 
+import com.huf.netty.client.handler.ProtoClientHandler;
 import com.huf.netty.common.proto.MessageProtos;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
